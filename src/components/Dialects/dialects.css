@@ -1,0 +1,20 @@
+.dialects { display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4.5rem, 12vw, 8rem) 1.25rem;
+  background: linear-gradient(180deg, var(--paper), #fff 30%, var(--paper)); }
+.dialects h2 { font-size: clamp(2.2rem, 7.5vw, 4.4rem); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05;
+  background: linear-gradient(180deg, #000 20%, #55555a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dialects__sub { max-width: 34rem; margin-top: 1rem; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.55; color: var(--ink-soft); }
+
+/* the shared meaning stays dim until every card has flipped */
+.meaning { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; padding: 0.6rem 1.2rem; border-radius: 999px; font-size: 0.98rem;
+  color: var(--ink-soft); background: var(--glass); border: 1px dashed rgba(0, 0, 0, 0.25); transition: all 0.9s var(--ease); }
+.meaning i { width: 9px; height: 9px; border-radius: 50%; background: #b5b5ba; transition: background 0.6s; }
+.meaning.is-on { color: #fff; border: 1px solid transparent; background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); box-shadow: 0 16px 30px -12px rgba(0, 0, 0, 0.55); transform: scale(1.04); }
+.meaning.is-on i { background: #fff; animation: dot 1.4s ease-in-out infinite; }
+@keyframes dot { 50% { transform: scale(1.6); opacity: 0.5; } }
+
+.dialects__grid { width: min(940px, 100%); margin-top: 2.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+  opacity: 0; transform: translateY(50px); filter: blur(8px); transition: opacity 1s var(--ease), transform 1s var(--ease), filter 1s var(--ease); }
+.dialects__grid.is-in { opacity: 1; transform: none; filter: none; }
+.dialects__foot { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; margin-top: 2rem; }
+.dialects__foot p { font-size: 0.88rem; color: var(--ink-soft); }
+@media (max-width: 700px) { .dialects__grid { grid-template-columns: 1fr; } }

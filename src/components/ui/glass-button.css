@@ -1,0 +1,6 @@
+.gbtn { position: relative; overflow: hidden; padding: 0.9rem 1.6rem; border-radius: 999px; font-weight: 500; font-size: 1rem; letter-spacing: -0.01em;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+.gbtn--black { color: #fff; background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+.gbtn--glass { background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow); }
+.gbtn:active { transform: scale(0.96); }
+@media (hover: hover) { .gbtn:hover { transform: translateY(-2px) scale(1.02); } }

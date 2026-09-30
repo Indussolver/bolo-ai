@@ -1,0 +1,14 @@
+.how { background: linear-gradient(180deg, var(--paper), #fff 30%, var(--paper)); }
+.how__head { text-align: center; padding: clamp(4.5rem, 12vw, 8rem) 1.25rem 1rem; }
+.how__head h2 { font-size: clamp(2.2rem, 7.5vw, 4.4rem); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05;
+  background: linear-gradient(180deg, #000 20%, #55555a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.how__head p { max-width: 30rem; margin: 1rem auto 0; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.55; color: var(--ink-soft); }
+
+.how__track { --p: 0; height: 320svh; position: relative; }
+.how__sticky { position: sticky; top: 0; height: 100svh; max-width: 1120px; margin: 0 auto; padding: 5rem 1.5rem 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+
+@media (max-width: 860px) {
+  .how__track { height: 300svh; }
+  .how__sticky { grid-template-columns: 1fr; grid-template-rows: auto auto; align-content: center; justify-items: center; gap: 1.6rem; padding-top: 4.6rem; }
+}

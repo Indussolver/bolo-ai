@@ -1,0 +1,18 @@
+.uc { display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4.5rem, 12vw, 8rem) 1.25rem;
+  background: linear-gradient(180deg, var(--paper), #fff 30%, var(--paper)); }
+.uc h2 { font-size: clamp(2.2rem, 7.5vw, 4.4rem); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05;
+  background: linear-gradient(180deg, #000 20%, #55555a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.uc__sub { max-width: 34rem; margin: 1rem 0 2rem; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.55; color: var(--ink-soft); }
+
+.uc__stage { width: min(980px, 100%); margin-top: 1.8rem; display: grid; grid-template-columns: 5fr 6fr; gap: 2.4rem; align-items: center;
+  opacity: 0; transform: translateY(50px); filter: blur(8px); transition: opacity 1s var(--ease), transform 1s var(--ease), filter 1s var(--ease); }
+.uc__stage.is-in { opacity: 1; transform: none; filter: none; }
+
+.uc__info { text-align: left; animation: infoin 0.8s var(--ease) both; }
+.uc__info h3 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.04em; }
+.uc__info p { margin-top: 0.6rem; font-size: clamp(1.02rem, 2.6vw, 1.2rem); line-height: 1.5; color: var(--ink-soft); }
+.uc__info ul { list-style: none; padding: 0; margin-top: 1.3rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.uc__info li { padding: 0.4rem 0.95rem; border-radius: 999px; font-size: 0.92rem; background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+@keyframes infoin { from { opacity: 0; filter: blur(8px); transform: translateY(12px); } }
+
+@media (max-width: 800px) { .uc__stage { grid-template-columns: 1fr; gap: 1.4rem; } .uc__info { text-align: center; } .uc__info ul { justify-content: center; } }

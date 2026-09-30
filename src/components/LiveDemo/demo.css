@@ -1,0 +1,24 @@
+.demo { display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4.5rem, 12vw, 8rem) 1.25rem;
+  background: linear-gradient(180deg, var(--paper), #fff 35%, var(--paper)); scroll-margin-top: 0; }
+.demo__title { font-size: clamp(2.3rem, 8vw, 4.6rem); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05;
+  background: linear-gradient(180deg, #000 20%, #55555a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.demo__sub { max-width: 34rem; margin-top: 1rem; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.55; color: var(--ink-soft); }
+
+.demo__stage { --lvl: 0; width: min(760px, 100%); margin-top: 2.6rem; padding: clamp(0.9rem, 3.5vw, 1.8rem); border-radius: 40px;
+  background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; opacity: 0; transform: translateY(70px) scale(0.95); filter: blur(10px);
+  transition: opacity 1.2s var(--ease), transform 1.2s var(--ease), filter 1.2s var(--ease); }
+.demo__stage.is-in { opacity: 1; transform: none; filter: none; }
+
+.demo__status { align-self: center; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.9rem; padding: 0.35rem 0.9rem;
+  border-radius: 999px; font-size: 0.88rem; font-weight: 500; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--line); }
+.demo__status i { width: 8px; height: 8px; border-radius: 50%; background: #b5b5ba; transition: background 0.4s; }
+.demo__status--listening i, .demo__status--replying i { background: var(--obsidian); animation: pulse 1s ease-in-out infinite; }
+.demo__status--thinking i { background: #8e8e93; animation: pulse 0.5s ease-in-out infinite; }
+@keyframes pulse { 50% { transform: scale(1.6); opacity: 0.5; } }
+
+.demo__notice { margin-top: 0.6rem; font-size: 0.9rem; color: var(--ink-soft); }
+.demo .chips { align-self: center; margin-top: 1.4rem; animation: none; }
+.demo__sample { align-self: center; margin-top: 0.9rem; padding: 0.4rem 0.8rem; font-size: 0.92rem; color: var(--ink-soft); text-decoration: underline; text-underline-offset: 4px; }
+.demo__sample:hover { color: var(--ink); }
+.demo__fine { max-width: 30rem; margin-top: 1.4rem; font-size: 0.82rem; line-height: 1.5; color: var(--ink-soft); }

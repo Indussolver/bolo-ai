@@ -1,0 +1,7 @@
+.utabs { position: relative; display: grid; grid-template-columns: repeat(var(--n), 1fr); width: min(460px, 100%); padding: 4px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow); }
+.utabs__thumb { position: absolute; left: 4px; top: 4px; bottom: 4px; width: calc((100% - 8px) / var(--n)); border-radius: 999px;
+  background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.6);
+  transform: translateX(calc(var(--i) * 100%)); transition: transform 0.7s var(--ease); }
+.utabs button { position: relative; z-index: 1; padding: 0.6rem 0.3rem; font-size: clamp(0.8rem, 2.6vw, 0.95rem); font-weight: 500; color: var(--ink-soft); transition: color 0.5s var(--ease); }
+.utabs button.on { color: #fff; }

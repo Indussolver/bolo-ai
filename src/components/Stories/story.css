@@ -1,0 +1,22 @@
+.story { flex: none; width: var(--cw); scroll-snap-align: center; display: flex; flex-direction: column; gap: 1.4rem; padding: 1.6rem; border-radius: 38px; text-align: left; cursor: pointer;
+  background: var(--glass-strong, rgba(255, 255, 255, 0.7)); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow);
+  transform: scale(0.92); opacity: 0.5; filter: blur(1.5px); transition: transform 0.8s var(--ease), opacity 0.8s var(--ease), filter 0.8s var(--ease); }
+.story.is-active { transform: none; opacity: 1; filter: none; cursor: default; }
+
+.story__meta { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.story__meta span { padding: 0.28rem 0.85rem; border-radius: 999px; font-size: 0.82rem; font-weight: 500; background: #fff; border: 1px solid var(--line); }
+.story__meta span:first-child { color: #fff; border-color: transparent; background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); }
+
+.story__quote { position: relative; flex: 1; padding-top: 1.4rem; font-size: clamp(1.2rem, 3.4vw, 1.6rem); font-weight: 600; line-height: 1.42; letter-spacing: -0.02em; }
+.story__quote::before { content: "\201C"; position: absolute; left: -2px; top: -0.35em; font-size: 4.2rem; line-height: 1; color: rgba(0, 0, 0, 0.12); }
+
+.story__who { display: flex; align-items: center; gap: 0.8rem; }
+.story__av { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; font-size: 0.95rem; font-weight: 700; color: #fff;
+  background: radial-gradient(circle at 32% 24%, #4a4a50, #050506); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35); }
+.story__who p { line-height: 1.3; }
+.story__who small { display: block; font-size: 0.85rem; color: var(--ink-soft); }
+
+.story__result { display: flex; align-items: baseline; gap: 0.9rem; padding: 1rem 1.3rem; border-radius: 26px; color: #fff;
+  background: radial-gradient(circle at 25% 0%, #4a4a50 0%, #17171a 45%, #050506 100%); box-shadow: inset 0 2px 1px rgba(255, 255, 255, 0.25); }
+.story__num { font-size: clamp(2.4rem, 7vw, 3.2rem); font-weight: 700; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums; }
+.story__label { font-size: 0.95rem; line-height: 1.3; opacity: 0.75; }

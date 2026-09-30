@@ -1,0 +1,6 @@
+.odo { --lh: 1.12em; display: inline-flex; align-items: flex-start; line-height: var(--lh); font-variant-numeric: tabular-nums; }
+.odo__pre { margin-right: 0.05em; font-size: 0.62em; font-weight: 600; opacity: 0.7; line-height: 1.7; }
+.odo__col { display: inline-block; height: var(--lh); overflow: hidden; }
+.odo__strip { display: flex; flex-direction: column; transform: translateY(calc(var(--d) * var(--lh) * -1)); transition: transform 0.95s var(--delay) var(--ease); }
+.odo__strip b { display: block; height: var(--lh); font-weight: inherit; text-align: center; }
+.odo__sep { display: inline-block; height: var(--lh); }

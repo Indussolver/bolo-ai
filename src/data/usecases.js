@@ -1,0 +1,43 @@
+// Business names are placeholders. Swap in real client names/stories later.
+export const usecases = [
+  { id: "bank", label: "Bank", place: "Kaveri Nagrik Bank, Mysuru",
+    tagline: "Roz hazaaron kaal, aur zyada tar ek jaise sawal.",
+    tasks: ["EMI aur due date", "Balance aur mini statement", "Card block ya unblock"],
+    outcome: "EMI date badalne ki request darj",
+    chat: [
+      { who: "cust", text: "EMI kab due hai mera?" },
+      { who: "bolo", text: "Aapki home loan ki EMI 5 October ko due hai, 18,450 rupaye." },
+      { who: "cust", text: "Ek hafta aage kar sakte hain?" },
+      { who: "bolo", text: "Ji, 12 October tak ka extension mil sakta hai. Request daal di hai, SMS aayega." },
+    ] },
+  { id: "hospital", label: "Hospital", place: "Dr. Kulkarni Clinic, Pune",
+    tagline: "Reception par line chhoti, aur mareez ko jawab turant.",
+    tasks: ["Appointment book ya shift", "Doctor ka time aur fees", "Report ready hai ya nahi"],
+    outcome: "Appointment parson shaam 5 baje",
+    chat: [
+      { who: "cust", text: "Kal subah ka appointment shift karna hai." },
+      { who: "bolo", text: "Zaroor. Doctor parson subah 10:30 aur shaam 5 baje free hain. Kaunsa theek rahega?" },
+      { who: "cust", text: "Parson shaam wala." },
+      { who: "bolo", text: "Ho gaya. Parson shaam 5 baje. Ek din pehle WhatsApp par yaad dila denge." },
+    ] },
+  { id: "ecom", label: "E-commerce", place: "Rangrez Ethnic, Jaipur",
+    tagline: "Har tracking aur cancel ka call insaan tak pahunchna zaroori nahi.",
+    tasks: ["Order status aur tracking", "COD cancel ya address badalna", "Return aur refund"],
+    outcome: "COD order cancel, koi charge nahi",
+    chat: [
+      { who: "cust", text: "COD cancel karna hai, order abhi bheja to nahi?" },
+      { who: "bolo", text: "Order pack ho gaya hai par courier ne uthaya nahi. Cancel kar doon?" },
+      { who: "cust", text: "Haan kar do." },
+      { who: "bolo", text: "Cancel ho gaya. COD tha, isliye koi paisa nahi kata." },
+    ] },
+  { id: "kirana", label: "Kirana", place: "Gupta Kirana, Kanpur",
+    tagline: "Dukaan par phone bajta rahe, order ghar baithe likha jaaye.",
+    tasks: ["Phone par order lena", "Rate aur stock batana", "UPI link bhejna"],
+    outcome: "Order bana, UPI link WhatsApp par bheja",
+    chat: [
+      { who: "cust", text: "Bhaiya, aata 10 kilo, chini 5 kilo aur ek namak bhej do." },
+      { who: "bolo", text: "Aata 10 kilo, chini 5 kilo, namak 1 packet. Kul 640 rupaye, aaj shaam tak pahunch jayega. UPI ya cash?" },
+      { who: "cust", text: "UPI kar dungi." },
+      { who: "bolo", text: "Payment link WhatsApp par bhej diya." },
+    ] },
+];

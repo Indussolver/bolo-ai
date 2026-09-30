@@ -1,0 +1,41 @@
+/* everything inside the orb scales with --s (the orb size) */
+.sl, .su, .sr { width: 72%; display: flex; flex-direction: column; align-items: center; gap: calc(var(--s) * 0.05); }
+
+/* 1. listen: grey noise fades, clean white voice stays */
+.sl__bars { display: flex; align-items: center; gap: 3%; width: 100%; height: calc(var(--s) * 0.34); }
+.sl__col { position: relative; flex: 1; height: 100%; display: grid; place-items: center; }
+.sl__col b { position: absolute; width: 100%; border-radius: 99px; height: calc(var(--h) * 1%); }
+.sl__noise { background: rgba(255, 255, 255, 0.28); animation: jitter calc(0.5s + var(--i) * 0.03s) ease-in-out infinite alternate; }
+.sl__voice { background: linear-gradient(180deg, #fff, #b5b5bc); animation: breathe 1.4s calc(var(--i) * -0.1s) ease-in-out infinite alternate; }
+.is-on .sl__noise { animation: jitter calc(0.5s + var(--i) * 0.03s) ease-in-out infinite alternate, hush 2.6s 0.6s ease forwards; }
+.sl__cap { font-size: calc(var(--s) * 0.048); opacity: 0.75; }
+@keyframes jitter { from { transform: scaleY(0.25); } to { transform: scaleY(1); } }
+@keyframes hush { to { opacity: 0.08; } }
+@keyframes breathe { from { transform: scaleY(0.7); } to { transform: scaleY(1.05); } }
+
+/* 2. understand: words -> language, meaning, confidence */
+.su__words { display: flex; flex-wrap: wrap; justify-content: center; gap: calc(var(--s) * 0.02); }
+.su__word, .su__rows > div, .su__conf { opacity: 0; }
+.is-on .su__word { animation: pop 0.6s var(--d) var(--ease) forwards; }
+.su__word { padding: 0.28em 0.8em; border-radius: 999px; font-size: calc(var(--s) * 0.062); font-weight: 600; background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.28); }
+.su__rows { display: flex; flex-direction: column; gap: calc(var(--s) * 0.018); width: 100%; margin: 0; }
+.su__rows > div { display: flex; justify-content: space-between; padding: 0.4em 0.9em; border-radius: 14px; font-size: calc(var(--s) * 0.046); background: rgba(255, 255, 255, 0.08); }
+.is-on .su__rows > div { animation: pop 0.6s var(--d) var(--ease) forwards; }
+.su__rows dt { opacity: 0.6; } .su__rows dd { margin: 0; font-weight: 600; }
+.su__conf { position: relative; display: flex; align-items: center; gap: 0.6em; font-size: calc(var(--s) * 0.046); }
+.is-on .su__conf { animation: pop 0.6s var(--d) var(--ease) forwards; }
+.su__conf svg { width: calc(var(--s) * 0.1); height: calc(var(--s) * 0.1); transform: rotate(-90deg); }
+.su__conf circle { fill: none; stroke-width: 3.2; }
+.su__t { stroke: rgba(255, 255, 255, 0.2); }
+.su__f { stroke: #fff; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.is-on .su__f { animation: fill 1.2s 1.5s var(--ease) forwards; }
+@keyframes fill { to { stroke-dashoffset: 0.04; } }
+@keyframes pop { from { opacity: 0; transform: translateY(10px) scale(0.92); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* 3. reply: words arrive one by one, wave speaks */
+.sr small { font-size: calc(var(--s) * 0.042); opacity: 0.6; }
+.sr__text { text-align: center; font-size: calc(var(--s) * 0.068); font-weight: 600; line-height: 1.35; }
+.sr__w { display: inline-block; opacity: 0; }
+.is-on .sr__w { animation: pop 0.6s var(--d) var(--ease) forwards; }
+.sr__wave { display: flex; align-items: center; gap: 4%; width: 60%; height: calc(var(--s) * 0.1); }
+.sr__wave b { flex: 1; height: 100%; border-radius: 99px; background: linear-gradient(180deg, #fff, #a9a9b1); animation: breathe 0.9s calc(var(--i) * -0.13s) ease-in-out infinite alternate; }

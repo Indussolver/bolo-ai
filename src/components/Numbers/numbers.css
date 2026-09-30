@@ -1,0 +1,23 @@
+.numbers { display: flex; flex-direction: column; align-items: center; text-align: center; padding: clamp(4.5rem, 12vw, 8rem) 1.25rem;
+  background: linear-gradient(180deg, var(--paper), #fff 30%, var(--paper)); }
+.numbers h2 { font-size: clamp(2.2rem, 7.5vw, 4.4rem); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05;
+  background: linear-gradient(180deg, #000 20%, #55555a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.numbers__sub { max-width: 34rem; margin-top: 1rem; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.55; color: var(--ink-soft); }
+.numbers__grid { width: min(1040px, 100%); margin-top: 2.8rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+
+.ncard { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; padding: 1.8rem 1.4rem; border-radius: 34px;
+  background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow);
+  opacity: 0; transform: translateY(50px) scale(0.96); filter: blur(8px);
+  transition: opacity 1s calc(var(--k) * 0.18s) var(--ease), transform 1s calc(var(--k) * 0.18s) var(--ease), filter 1s calc(var(--k) * 0.18s) var(--ease); }
+.ncard.is-in { opacity: 1; transform: none; filter: none; }
+.ncard__num { display: flex; align-items: baseline; justify-content: center; gap: 0.15em; font-size: clamp(3rem, 8vw, 4rem); font-weight: 700; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums; }
+.ncard__num small { font-size: 0.45em; font-weight: 600; color: var(--ink-soft); letter-spacing: -0.02em; }
+.ncard h3 { margin-top: 0.7rem; font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+.ncard__note { margin-top: 0.35rem; font-size: 0.88rem; line-height: 1.45; color: var(--ink-soft); }
+
+@media (max-width: 860px) { .numbers__grid { grid-template-columns: 1fr; } }
+@media (max-width: 860px) {
+  .ncard { flex-direction: row; text-align: left; gap: 1.2rem; padding: 1.3rem; --g: 108px; }
+  .ncard__num { justify-content: flex-start; font-size: 2.6rem; }
+  .ncard h3 { margin-top: 0.4rem; font-size: 1rem; }
+}

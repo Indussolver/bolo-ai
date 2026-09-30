@@ -1,0 +1,5 @@
+.int { display: flex; flex-direction: column; align-items: center; text-align: center; overflow: hidden; padding: clamp(4.5rem, 12vw, 8rem) 1.25rem;
+  background: linear-gradient(180deg, var(--paper), #fff 30%, var(--paper)); }
+.int h2 { font-size: clamp(2.2rem, 7.5vw, 4.4rem); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05;
+  background: linear-gradient(180deg, #000 20%, #55555a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.int__sub { max-width: 34rem; margin-top: 1rem; font-size: clamp(1rem, 2.6vw, 1.2rem); line-height: 1.55; color: var(--ink-soft); }

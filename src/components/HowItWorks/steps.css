@@ -1,0 +1,19 @@
+.steps { position: relative; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.4rem; width: 100%; max-width: 30rem; }
+.steps__rail { position: absolute; left: 19px; top: 20px; bottom: 20px; width: 2px; border-radius: 2px; background: rgba(0, 0, 0, 0.08); }
+.steps__rail i { display: block; height: 100%; border-radius: 2px; background: var(--ink); transform-origin: top; transform: scaleY(var(--p, 0)); }
+.step { position: relative; display: flex; gap: 1.1rem; }
+.step__badge { flex: none; z-index: 1; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; font-weight: 600;
+  color: var(--ink-soft); background: #fff; border: 1px solid var(--line); transition: all 0.6s var(--ease); }
+.is-on .step__badge, .is-done .step__badge { color: #fff; background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); border-color: transparent; }
+.is-on .step__badge { transform: scale(1.12); box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.55); }
+.step h3 { padding-top: 0.15rem; font-size: clamp(1.5rem, 4.6vw, 2.5rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.15; color: #b5b5ba; transition: color 0.6s var(--ease); }
+.is-on h3 { color: var(--ink); }
+.is-done h3 { color: var(--ink-soft); }
+/* only the active step opens */
+.step__body { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 0.8s var(--ease), opacity 0.6s var(--ease); }
+.is-on .step__body { grid-template-rows: 1fr; opacity: 1; }
+.step__body > div { overflow: hidden; }
+.step__body p { margin-top: 0.6rem; font-size: clamp(0.98rem, 2.5vw, 1.1rem); line-height: 1.55; color: var(--ink-soft); }
+.step__pill { display: inline-block; margin-top: 0.8rem; padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.85rem; font-weight: 500;
+  background: var(--glass-strong, #fff); border: 1px solid var(--line); }
+@media (max-width: 860px) { .steps { gap: 0.8rem; } .step__body p { margin-top: 0.3rem; } .step__pill { margin-top: 0.5rem; } }

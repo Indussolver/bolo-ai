@@ -1,0 +1,6 @@
+.backdrop { inset: 0; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse at 50% 0%, #fff 0%, var(--paper) 62%); }
+.backdrop__light { position: absolute; border-radius: 50%; filter: blur(70px); animation: float 16s ease-in-out infinite alternate;
+  translate: calc(var(--mx, 0) * -26px) calc(var(--my, 0) * -26px); transition: translate 0.8s var(--ease); }
+.backdrop__light--a { width: 60vmax; height: 60vmax; left: -20%; top: 30%; background: #fff; opacity: 0.95; }
+.backdrop__light--b { width: 46vmax; height: 46vmax; right: -14%; top: 48%; background: #d9d9de; opacity: 0.7; animation-delay: -7s; }
+@keyframes float { to { transform: translate(5vmax, -4vmax) scale(1.15); } }

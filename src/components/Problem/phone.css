@@ -1,0 +1,42 @@
+.phone { --pw: min(46vw, 300px, calc((100svh - 17rem) * 0.47)); width: var(--pw); aspect-ratio: 9 / 19; justify-self: center;
+  transform: perspective(1400px) rotateY(calc(max(0, 1 - var(--p, 0) * 2.2) * -16deg)) rotateX(calc(max(0, 1 - var(--p, 0) * 2.2) * 5deg)); }
+@media (min-width: 861px) { .phone { --pw: min(30vw, 300px, calc((100svh - 9rem) * 0.47)); } }
+
+.phone__frame { position: relative; width: 100%; height: 100%; padding: calc(var(--pw) * 0.035); border-radius: calc(var(--pw) * 0.15);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.85), rgba(215, 215, 222, 0.6)); border: 1px solid var(--glass-edge);
+  box-shadow: 0 50px 80px -30px rgba(0, 0, 0, 0.35), inset 0 2px 1px #fff; }
+.phone__screen { position: relative; height: 100%; overflow: hidden; display: flex; flex-direction: column; border-radius: calc(var(--pw) * 0.125); background: #fbfbfd; font-size: calc(var(--pw) * 0.05); }
+.phone__gloss { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(120deg, rgba(255, 255, 255, 0.5), transparent 35%); }
+.phone__island { position: absolute; left: 50%; top: 3%; width: 30%; height: 3.4%; border-radius: 99px; translate: -50% 0; background: var(--obsidian); z-index: 2; }
+.phone__bar { display: flex; align-items: center; gap: 0.6em; padding: 13% 5% 3.5%; font-weight: 600; border-bottom: 1px solid var(--line); }
+.phone__bar small { margin-left: auto; font-weight: 500; color: var(--ink-soft); }
+.phone__av { width: 1.7em; height: 1.7em; border-radius: 50%; background: radial-gradient(circle at 32% 24%, #4a4a50, #050506); }
+
+.phone__chat { flex: 1; display: flex; flex-direction: column; gap: 0.7em; padding: 5%; }
+.msg { max-width: 92%; padding: 0.65em 0.85em; border-radius: 1.1em; opacity: 0; }
+.is-in .msg { animation: msgin 0.7s var(--d) var(--ease) forwards; }
+@keyframes msgin { from { opacity: 0; transform: translateY(14px) scale(0.94); filter: blur(5px); } to { opacity: 1; transform: none; filter: none; } }
+
+.msg--me { align-self: flex-end; display: flex; align-items: center; gap: 0.6em; color: #fff; background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); border-bottom-right-radius: 0.3em; }
+.vn__play { width: 0; height: 0; border-left: 0.75em solid #fff; border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent; }
+.vn__bars { display: flex; align-items: center; gap: 2px; height: 1.8em; }
+.vn__bars b { width: 2.5px; height: calc(var(--h) * 1%); border-radius: 2px; background: #fff; animation: vn 1s calc(var(--i) * -0.09s) ease-in-out infinite alternate; }
+@keyframes vn { from { transform: scaleY(0.6); } to { transform: scaleY(1); } }
+.msg--me small { opacity: 0.7; }
+
+.msg--tr { align-self: flex-start; background: #efeff2; border: 1px solid var(--line); border-bottom-left-radius: 0.3em; transition: background 0.6s, border-color 0.6s; }
+.is-fixed .msg--tr { background: #fff; border-color: rgba(0, 0, 0, 0.35); }
+.msg--tr small { display: block; font-size: 0.78em; color: var(--ink-soft); margin-bottom: 0.15em; }
+.msg--tr p { font-weight: 600; line-height: 1.3; }
+.msg--tr mark { color: inherit; background: none; text-decoration: underline dashed; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.tag { display: inline-block; margin-top: 0.5em; padding: 0.15em 0.7em; border-radius: 99px; font-size: 0.75em; font-weight: 500; border: 1px dashed rgba(0, 0, 0, 0.3); color: var(--ink-soft); }
+.is-fixed .tag { color: #fff; background: var(--obsidian); border: 1px solid var(--obsidian); }
+
+.msg--bot { align-self: flex-start; line-height: 1.35; background: #e6e6ea; color: var(--ink-soft); border-bottom-left-radius: 0.3em; transition: background 0.6s, color 0.6s; }
+.is-fixed .msg--bot { background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); color: #fff; }
+
+/* a light sweep shows the line being "re-heard" */
+.phone__scan { position: absolute; left: 0; right: 0; top: -30%; height: 30%; opacity: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.05) 45%, rgba(255, 255, 255, 0.95) 52%, transparent); }
+.is-fixed .phone__scan { animation: scan 1.2s var(--ease); }
+@keyframes scan { 0% { top: -30%; opacity: 1; } 100% { top: 105%; opacity: 1; } }

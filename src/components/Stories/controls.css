@@ -1,0 +1,8 @@
+.ctrl { display: flex; align-items: center; gap: 1rem; margin-top: 1.8rem; }
+.ctrl > button { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--glass); border: 1px solid var(--glass-edge);
+  backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow); transition: transform 0.4s var(--ease), opacity 0.4s; }
+.ctrl > button:disabled { opacity: 0.35; cursor: default; }
+.ctrl > button:not(:disabled):active { transform: scale(0.9); }
+.ctrl__dots { display: flex; gap: 6px; padding: 0.55rem 0.8rem; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+.ctrl__dots button { width: 8px; height: 8px; border-radius: 99px; background: rgba(0, 0, 0, 0.2); transition: width 0.4s var(--ease), background 0.4s; }
+.ctrl__dots button.on { width: 26px; background: var(--ink); }

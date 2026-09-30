@@ -1,0 +1,19 @@
+/* --c: 0 (doors wide open) -> 1 (closed), driven by scroll progress --p */
+.shield { --sw: min(40vw, 300px); --c: clamp(0, calc(var(--p, 0) * 2.6), 1); position: relative; width: var(--sw); aspect-ratio: 100 / 120; justify-self: center; }
+@media (max-width: 860px) { .shield { --sw: min(46vw, 190px); } }
+
+.shield__half { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.3));
+  opacity: calc(0.3 + 0.7 * var(--c)); }
+.shield__half--l { clip-path: inset(0 50% 0 0); transform: translateX(calc((1 - var(--c)) * -42%)) rotate(calc((1 - var(--c)) * -8deg)); }
+.shield__half--r { clip-path: inset(0 0 0 50%); transform: translateX(calc((1 - var(--c)) * 42%)) rotate(calc((1 - var(--c)) * 8deg)); }
+
+/* a thin light line appears where the doors meet */
+.shield__seam { position: absolute; left: 50%; top: 12%; width: 2px; height: 76%; translate: -50% 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.9), transparent); opacity: clamp(0, calc((var(--c) - 0.85) * 6.7), 1); }
+.shield__lock { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+  opacity: clamp(0, calc((var(--c) - 0.75) * 4), 1); transform: scale(clamp(0.6, calc(0.6 + (var(--c) - 0.75) * 1.6), 1)); transform-origin: 50% 48%; }
+
+.shield__ring { position: absolute; left: -24%; top: -14%; width: 148%; height: auto; aspect-ratio: 1; overflow: visible; animation: ringspin 50s linear infinite;
+  opacity: clamp(0, calc((var(--c) - 0.6) * 2.5), 1); }
+.shield__ringtext { font: 600 7.4px var(--font); letter-spacing: 0.06em; fill: var(--ink-soft); }
+@keyframes ringspin { to { transform: rotate(360deg); } }

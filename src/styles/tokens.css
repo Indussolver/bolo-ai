@@ -1,0 +1,14 @@
+:root {
+  --paper: #f5f5f7;
+  --white: #ffffff;
+  --ink: #1d1d1f;
+  --ink-soft: #6e6e73;
+  --obsidian: #0b0b0d;
+  --glass: rgba(255, 255, 255, 0.58);
+  --glass-edge: rgba(255, 255, 255, 0.9);
+  --line: rgba(0, 0, 0, 0.08);
+  --blur: blur(24px) saturate(180%);
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.22);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font: "Inter", -apple-system, "SF Pro Display", "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans Bengali", "Noto Sans Telugu", "Noto Sans Gujarati", "Noto Sans Kannada", "Noto Sans Gurmukhi", system-ui, sans-serif;
+}

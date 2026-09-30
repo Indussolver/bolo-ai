@@ -1,0 +1,26 @@
+.orbit { --o: min(92vw, 560px); position: relative; width: var(--o); height: var(--o); margin-top: 2.4rem;
+  opacity: 0; transform: scale(0.85); filter: blur(10px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease), filter 1.2s var(--ease); }
+.orbit.is-in { opacity: 1; transform: none; filter: none; }
+
+.ring { position: absolute; inset: 0; animation: spin var(--dur) linear infinite var(--dir); }
+.ring--1 { --r: 0.24; --dur: 46s; --dir: normal;  --cdir: reverse; }
+.ring--2 { --r: 0.4;  --dur: 70s; --dir: reverse; --cdir: normal; }
+/* the visible track (dashed circle) */
+.ring::before { content: ""; position: absolute; left: 50%; top: 50%; width: calc(var(--o) * var(--r) * 2); height: calc(var(--o) * var(--r) * 2);
+  translate: -50% -50%; border-radius: 50%; border: 1px dashed rgba(0, 0, 0, 0.14); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.orbit.is-paused .ring, .orbit.is-paused .node__spin { animation-play-state: paused; }
+
+/* centre: the Bolo orb */
+.core { position: absolute; left: 50%; top: 50%; width: calc(var(--o) * 0.22); aspect-ratio: 1; translate: -50% -50%; z-index: 2; }
+.core__glass { position: relative; width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(circle at 32% 24%, #4a4a50, #17171a 45%, #050506);
+  box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.6), inset 0 2px 1px rgba(255, 255, 255, 0.35); }
+.core__gloss { position: absolute; left: 12%; top: 4%; width: 76%; height: 40%; border-radius: 50%; background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), transparent 90%); }
+.core__bars { position: relative; z-index: 1; display: flex; align-items: center; gap: 6%; width: 56%; height: 36%; }
+.core__bars b { flex: 1; height: 45%; border-radius: 99px; background: linear-gradient(180deg, #fff, #b5b5bc); animation: cbreathe 1.6s calc(var(--i) * -0.2s) ease-in-out infinite alternate; }
+.is-talking .core__bars b { animation-duration: 0.5s; }
+@keyframes cbreathe { from { transform: scaleY(0.55); } to { transform: scaleY(1.7); } }
+.core__ripple { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.16); animation: cripple 4.5s ease-out infinite; }
+.core__ripple:nth-child(2) { animation-delay: 2.2s; }
+@keyframes cripple { from { transform: scale(1); opacity: 0.8; } to { transform: scale(2.1); opacity: 0; } }

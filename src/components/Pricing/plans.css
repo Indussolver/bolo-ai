@@ -1,0 +1,28 @@
+.plans { width: min(1040px, 100%); margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
+.plan { position: relative; display: flex; flex-direction: column; padding: 1.8rem 1.5rem; border-radius: 34px; text-align: left;
+  background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); box-shadow: var(--shadow);
+  opacity: 0; transform: translateY(50px) scale(0.96); filter: blur(8px);
+  transition: opacity 1s calc(var(--k) * 0.15s) var(--ease), transform 1s calc(var(--k) * 0.15s) var(--ease), filter 1s calc(var(--k) * 0.15s) var(--ease); }
+.plans.is-in .plan { opacity: 1; transform: none; filter: none; }
+.plans.is-in .plan--dark { transform: translateY(-10px); }
+.plan h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.03em; }
+.plan__tag { margin-top: 0.2rem; font-size: 0.92rem; color: var(--ink-soft); }
+.plan__price { display: flex; align-items: baseline; gap: 0.35rem; margin-top: 1.4rem; font-size: clamp(2.8rem, 6vw, 3.6rem); font-weight: 700; letter-spacing: -0.05em; }
+.plan__price small { font-size: 0.9rem; font-weight: 500; letter-spacing: 0; color: var(--ink-soft); }
+.plan__custom { line-height: 1.12; }
+.plan__bill { margin-top: 0.3rem; min-height: 2.6em; font-size: 0.85rem; line-height: 1.4; color: var(--ink-soft); }
+.plan ul { flex: 1; list-style: none; padding: 0; margin: 1.2rem 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.plan li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.95rem; line-height: 1.4; }
+.plan li svg { flex: none; margin-top: 0.15em; }
+.plan__cta { padding: 0.85rem 1rem; border-radius: 999px; font-weight: 600; background: #fff; border: 1px solid var(--line); transition: transform 0.4s var(--ease); }
+.plan__cta:active { transform: scale(0.96); }
+@media (hover: hover) { .plan__cta:hover { transform: translateY(-2px); } }
+
+/* featured plan is black glass */
+.plan--dark { color: #fff; background: radial-gradient(circle at 25% 0%, #4a4a50 0%, #17171a 45%, #050506 100%); border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 40px 60px -28px rgba(0, 0, 0, 0.6), inset 0 2px 1px rgba(255, 255, 255, 0.25); }
+.plan--dark .plan__tag, .plan--dark .plan__bill, .plan--dark .plan__price small { color: rgba(255, 255, 255, 0.65); }
+.plan--dark .plan__cta { color: var(--ink); border: 0; }
+.plan__badge { position: absolute; top: -12px; left: 50%; translate: -50% 0; white-space: nowrap; padding: 0.3rem 0.9rem; border-radius: 99px; font-size: 0.78rem; font-weight: 600;
+  color: var(--ink); background: #fff; box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.35); }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; max-width: 440px; } .plans.is-in .plan--dark { transform: none; } }

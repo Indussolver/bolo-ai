@@ -1,0 +1,9 @@
+.chips { display: flex; gap: 0.5rem; max-width: 100%; padding: 0.4rem; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+  border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-edge); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+  animation: rise 1.1s 1.05s var(--ease) both; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; scroll-snap-align: center; padding: 0.55rem 1.05rem; border-radius: 999px; font-size: 0.95rem; color: var(--ink-soft);
+  transition: background 0.5s var(--ease), color 0.5s var(--ease), transform 0.4s var(--ease); }
+.chip.is-on { color: #fff; background: linear-gradient(180deg, #2a2a2e, var(--obsidian)); box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.6); }
+.chip:active { transform: scale(0.94); }
+@media (hover: hover) { .chip:not(.is-on):hover { color: var(--ink); } }
